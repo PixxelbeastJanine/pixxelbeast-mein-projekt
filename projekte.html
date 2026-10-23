@@ -1,16 +1,34 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pixxelbeast – Projektübersicht</title><style>body{margin:0;background:#031741}</style></head><body><!-- PIXXELBEAST – Projektübersicht im Website-Design
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pixxelbeast – Projektübersicht</title><style>body{margin:0;background:#000000}</style></head><body><!-- PIXXELBEAST – Projektübersicht im Website-Design
      Schriften und Farben wie auf der Website (Lexend, League Spartan, Open Sans, Lato).
      Alle Klassen beginnen mit .pb-, Bilder liegen in img/projekte/. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@700&family=Lexend:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
+:root {
+  /* Markenfarben Pixxelbeast (aus Logodateien ermittelt, siehe assets/marke/MARKE.md) */
+  --pb-pink: #FF3EB3;         /* Primärfarbe, PANTONE 806 C */
+  --pb-gruen: #78D900;        /* Akzent */
+  --pb-violett: #7E15FD;      /* Akzent */
+  --pb-lila: #82008C;         /* Sekundär/Detail */
+  --pb-schwarz: #000000;      /* Text */
+  --pb-weiss: #FFFFFF;        /* Hintergrund */
+
+  /* Rollen */
+  --pb-farbe-primaer: var(--pb-pink);
+  --pb-farbe-akzent: var(--pb-gruen);
+  --pb-farbe-akzent-2: var(--pb-violett);
+  --pb-farbe-text: var(--pb-schwarz);
+  --pb-farbe-hintergrund: var(--pb-weiss);
+}
 .pb-projekte{
-  --pb-navy:#031741; --pb-pink:#ff3eb3; --pb-purple:#7634be; --pb-lime:#78d900; --pb-white:#fff;
-  --pb-soft:#b9c1d9; --pb-grey:#5b6585; --pb-gradient:linear-gradient(90deg,#fb3eb4 0%,#7634be 100%);
+  /* Seitenrollen auf Basis der Markenfarben. Pink nur als Fläche/Linie oder auf Schwarz, Text auf Pink in Schwarz (Kontrast 6,6:1). */
+  --pb-flaeche:var(--pb-schwarz); --pb-white:var(--pb-weiss); --pb-ink:var(--pb-schwarz);
+  --pb-lime:var(--pb-gruen); --pb-purple:var(--pb-violett); --pb-akzent-flaeche:var(--pb-farbe-primaer);
+  --pb-grey:#555555; --pb-linie:#e6e6e6; --pb-medien:#1a1a1a;
   --pb-head:"Lexend",system-ui,sans-serif; --pb-display:"League Spartan","Lexend",system-ui,sans-serif;
   --pb-body:"Open Sans",system-ui,sans-serif; --pb-card:"Lato","Open Sans",system-ui,sans-serif;
-  position:relative; overflow:hidden; background:var(--pb-navy); color:var(--pb-white);
+  position:relative; overflow:hidden; background:var(--pb-flaeche); color:var(--pb-white);
   font:400 16px/1.55 var(--pb-body); padding:clamp(56px,6vw,70px) 0 clamp(70px,9vw,110px);
 }
 .pb-projekte *,.pb-projekte *::before,.pb-projekte *::after{box-sizing:border-box}
@@ -23,7 +41,7 @@
 .pb-deco-x{position:absolute;right:6%;top:clamp(150px,16vw,210px);width:32px;height:32px;color:var(--pb-lime);pointer-events:none}
 .pb-projekte h2{font:700 clamp(26px,3.56vw,42px)/1.1 var(--pb-head);letter-spacing:.035em;text-align:center;margin:0 0 .5em}
 .pb-projekte__lead{max-width:640px;margin:0 auto;text-align:center;color:var(--pb-white);font-size:clamp(14px,1.4vw,16px)}
-.pb-trust{background:var(--pb-gradient);margin:clamp(34px,4vw,48px) 0}
+.pb-trust{background:var(--pb-akzent-flaeche);color:var(--pb-ink);margin:clamp(34px,4vw,48px) 0}
 .pb-trust ul{list-style:none;margin:0 auto;max-width:1180px;padding:14px clamp(16px,4vw,52px);display:flex;flex-wrap:wrap;justify-content:center;gap:10px clamp(22px,4vw,56px)}
 .pb-trust li{display:flex;align-items:center;gap:9px;font:700 clamp(12px,1.2vw,14px)/1.2 var(--pb-body)}
 .pb-trust svg{width:22px;height:22px;flex:none}
@@ -34,25 +52,25 @@
   text-transform:uppercase;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease}
 .pb-btn:hover{transform:translateY(-2px)}
 .pb-btn:focus-visible,.pb-card:focus-within{outline:3px solid var(--pb-lime);outline-offset:3px}
-.pb-btn--outline:hover{background:var(--pb-white);color:var(--pb-navy)}
-.pb-btn--gradient,.pb-btn[aria-pressed="true"]{background:var(--pb-gradient);border-color:transparent;color:var(--pb-white)}
+.pb-btn--outline:hover{background:var(--pb-white);color:var(--pb-ink)}
+.pb-btn--gradient,.pb-btn[aria-pressed="true"]{background:var(--pb-akzent-flaeche);border-color:var(--pb-akzent-flaeche);color:var(--pb-ink)}
 .pb-btn--gradient:hover{box-shadow:0 8px 26px rgba(255,62,179,.45)}
-.pb-btn small{font:inherit;opacity:.65;letter-spacing:.04em}
+.pb-btn small{font:inherit;opacity:.8;letter-spacing:.04em}
 .pb-grid{list-style:none;margin:0 auto;padding:0;max-width:min(85.4vw,1000px);display:grid;
   grid-template-columns:repeat(3,1fr);gap:clamp(30px,4.5vw,52px) clamp(12px,1.7vw,20px)}
-.pb-card{background:var(--pb-white);color:var(--pb-navy);display:flex;flex-direction:column;transition:transform .25s ease}
+.pb-card{background:var(--pb-white);color:var(--pb-ink);display:flex;flex-direction:column;transition:transform .25s ease}
 .pb-card:hover{transform:translateY(-5px)}
 .pb-card[hidden],.pb-card.is-folded{display:none}
-.pb-card__media{position:relative;aspect-ratio:4/3;background:#0b1f57;overflow:hidden}
+.pb-card__media{position:relative;aspect-ratio:4/3;background:var(--pb-medien);overflow:hidden}
 .pb-card__media img{display:block;width:100%;height:100%;object-fit:cover}
-.pb-card__year{position:absolute;left:12px;top:12px;background:var(--pb-gradient);color:var(--pb-white);
+.pb-card__year{position:absolute;left:12px;top:12px;background:var(--pb-akzent-flaeche);color:var(--pb-ink);
   font:700 12px/1 var(--pb-head);letter-spacing:.1em;padding:7px 11px;border-radius:999px}
 .pb-card__nophoto{position:absolute;inset:0;display:grid;place-items:center;
-  background:radial-gradient(circle,rgba(255,62,179,.6) 1.6px,transparent 2px) 0 0/14px 14px,radial-gradient(circle,rgba(118,52,190,.5) 1.6px,transparent 2px) 7px 7px/14px 14px,#0b1f57}
-.pb-card__nophoto span{font:700 12px/1 var(--pb-head);letter-spacing:.1em;text-transform:uppercase;color:var(--pb-white);border:2px solid var(--pb-white);border-radius:999px;padding:8px 14px;background:var(--pb-navy)}
+  background:radial-gradient(circle,rgba(255,62,179,.6) 1.6px,transparent 2px) 0 0/14px 14px,radial-gradient(circle,rgba(126,21,253,.5) 1.6px,transparent 2px) 7px 7px/14px 14px,var(--pb-medien)}
+.pb-card__nophoto span{font:700 12px/1 var(--pb-head);letter-spacing:.1em;text-transform:uppercase;color:var(--pb-white);border:2px solid var(--pb-white);border-radius:999px;padding:8px 14px;background:var(--pb-flaeche)}
 .pb-card h3{font:700 clamp(16px,1.8vw,21px)/1.1 var(--pb-display);text-transform:uppercase;letter-spacing:.03em;margin:1.1em clamp(13px,1.5vw,18px) .35em}
 .pb-card__place{font:400 clamp(12px,1.3vw,14.5px)/1.3 var(--pb-card);color:var(--pb-grey);margin:0 clamp(13px,1.5vw,18px) 14px}
-.pb-card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:auto clamp(13px,1.5vw,18px) 20px;padding-top:14px;border-top:1px solid #e6e9f5;
+.pb-card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:auto clamp(13px,1.5vw,18px) 20px;padding-top:14px;border-top:1px solid var(--pb-linie);
   font:400 clamp(12px,1.25vw,14px)/1.3 var(--pb-card)}
 .pb-card dt{font:700 11px/1.5 var(--pb-head);letter-spacing:.1em;text-transform:uppercase;color:var(--pb-purple)}
 .pb-card dd{margin:0}
@@ -76,7 +94,7 @@
     <p class="pb-projekte__lead">Vom Weserstadion bis zur Pizzeria um die Ecke: Jedes Display wurde individuell für den Standort geplant, montiert und wird von uns aus Bremen betreut.</p>
   </div>
   <div class="pb-trust"><ul>
-    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7634be" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>30 Projekte</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7634be" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Seit 2020 in Bremen und umzu</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7634be" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Pixelpitch P2.5 bis P10</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7634be" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>In- &amp; Outdoor</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7E15FD" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>30 Projekte</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7E15FD" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Seit 2020 in Bremen und umzu</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7E15FD" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Pixelpitch P2.5 bis P10</li>    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M7 12.4l3.2 3.1L17 8.8" fill="none" stroke="#7E15FD" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>In- &amp; Outdoor</li>
   </ul></div>
   <div class="pb-projekte__wrap">
     <ul class="pb-filter" aria-label="Projekte filtern">
