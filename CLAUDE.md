@@ -20,3 +20,11 @@
 - **Unabhängige Teile parallel:** Teile, die nicht voneinander abhängen, startest du gleichzeitig.
 - **Fehler:** Ist ein Ergebnis falsch, gibst du es mit einer genauen Fehlerbeschreibung an einen Sub-Agenten zurück. Du korrigierst es nicht selbst.
 - **Ehrlich melden:** Du sagst mir klar, was fertig und geprüft ist und was nicht, und welches Modell du wofür genommen hast.
+
+## Marke und Gestaltung
+
+- Hauptfarbe Pixxel-Pink `#FF3EB3` (PANTONE 806 C); dazu Schwarz `#000000` und Weiß `#FFFFFF`.
+- Akzentfarben: Grün `#78D900`, Violett `#7E15FD`, Lila `#82008C` (nur sparsam).
+- Schriften: Markenschrift ist unklar (nicht im Logokoffer); bis zur Klärung Systemschrift (`system-ui`).
+- Logos, Farbtabelle, CSS-Variablen (`--pb-...`) und Regeln: `assets/marke/MARKE.md`.
+- Bei jeder Gestaltung diese Markenregeln einhalten.
